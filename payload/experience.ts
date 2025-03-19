@@ -2,48 +2,24 @@ import { IExperience } from '../component/experience/IExperience';
 
 const experience: IExperience.Payload = {
   disable: false,
-  disableTotalPeriod: false,
+  disableTotalPeriod: true,
   list: [
     {
-      title: 'Linux Foundation',
+      title: '더존비즈온',
       positions: [
         {
-          title: 'System Engineer',
-          startedAt: '1996-05',
+          title: 'ERP / Software Developer',
+          startedAt: '2020-08',
+          endedAt: '2025-03',
           descriptions: [
-            'Steering Kernel patching and updates for various distributions',
-            'Automating deployment and integration processes for Linux servers',
-            'Spearheading initiatives to enhance Linux kernel security',
-            'Collaborating with global developers to coordinate code contributions',
+            '내부 그룹웨어 팀 및 외부 협력사와 협업하여 전자결재 시스템 개발',
+            '재무 업무 비즈니스에 필요한 주요 API 구현 및 데이터 모델 설계',
+            '사용자 Needs 에 맞는 사용성 개선과 신규 비즈니스 로직 구현',
+            'Quartz Job 스케줄러와 Spring Batch를 사용한 자동화',
+            '레거시 청산 및 기존 비즈니스 유지보수',
+            'ERP 컨설턴트 및 업체 담당자와 커뮤니케이션을 통해 우선순위 산정 및 요구사항에 맞는 데이터 설계 진행',
           ],
-          skillKeywords: ['C', 'Linux', 'Kernel', 'Security', 'Automation'],
-        },
-        {
-          title: 'System Engineer Intern',
-          startedAt: '1996-02',
-          endedAt: '1996-05',
-          descriptions: [
-            'Assisted senior engineers in maintaining and updating kernel patches for Linux distributions',
-            'Supported deployment and integration tasks for Linux server environments',
-            'Conducted research on Linux kernel security practices and presented findings to the team',
-          ],
-          skillKeywords: ['C', 'Linux', 'Kernel', 'Support', 'Research'],
-        },
-      ],
-    },
-    {
-      title: 'Open Source Community',
-      positions: [
-        {
-          title: 'System Advocate and Developer',
-          startedAt: '2010-06',
-          endedAt: '2018-01',
-          descriptions: [
-            'Promoted the use and development of Linux globally.',
-            'Developed automated scripts to streamline system configuration.',
-            'Facilitated live patching systems, reducing downtime.',
-          ],
-          skillKeywords: ['Open Source', 'Linux', 'AWS', 'RDBMS'],
+          skillKeywords: ['JavaScript', 'Java', 'Spring', 'Spring Batch', 'Redis', 'Oracle'],
         },
       ],
     },

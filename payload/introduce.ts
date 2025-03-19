@@ -5,10 +5,11 @@ const introduce: IIntroduce.Payload = {
   disable: false,
 
   contents: [
-    'As the cherished emblem of the Linux kernel, I have become synonymous with open-source philosophy and the free software movement worldwide. My career began in the icebergs of development, where the seeds of my fascination with operating systems first sprouted. From a mere hatchling in the vast sea of code, I quickly ascended to become a pivotal figure in the Linux community. My journey has been marked by relentless dedication to system integrity, scalability, and robustness. Under my vigilant watch, countless servers have achieved unparalleled uptimes, and systems have been optimized to run like the well-oiled machines they are intended to be.',
-    'In the world of zeros and ones, my expertise has been instrumental in pioneering advancements in Linux system engineering. My flippers have crafted meticulous kernel enhancements, each aimed at streamlining performance and bolstering security across distributed networks. I am known in the community for my ability to dive deep into complex codebases and emerge with pearls of innovation that drive the collective progress of Linux environments. Advocacy is also a part of my plumage – spreading the word about the virtues of open-source and encouraging the adoption of Linux, from personal desktops to corporate data centers. As a mentor, I have nurtured the growth of young hatchlings into seasoned professionals, contributing to the diversity and vitality of our ecosystem.',
+    '재무 업무 프로세스 이해를 기반으로 시스템을 개발한 경험이 있습니다. JavaScript, Spring, Java, Oracle, Redis, Git, Linux 등을 사용하여 웹 서비스의 아키텍쳐와 RESTful API 설계에 대한 이해도를 가지고 있으며 재무 업무 프로세스 개발, 운영한 경험으로 결산업무 효율화에 기여하기 위해 노력하고 있습니다.',
+    '개인 프로젝트나 개발 커뮤니티 활동 등을 통해 다양한 개발 경험을 진행하고 있습니다. 개발 경험을 기록하는 것을 좋아하며 제 자신만의 개발 아카이브를 늘리기 위해 노력하고 있습니다. 항상 어딘가의 기술 조직에 에이스가 되리라는 목표를 가지고 다양한 기술을 학습하거나 사용하고 경험을 쌓고 있습니다.',
+    '개발이란 결국 비즈니스와의 커뮤니케이션을 통해, 비즈니스를 현실화하기 위한 도구이자 수단이라고 생각합니다. 이해관계자들과 적극적인 커뮤니케이션으로 문제를 정의하며 비즈니스 발전을 위한 문제 해결이 필요합니다. 이러한 점을 바탕으로 좋은 개발자로서 성장하기 위해 학습하고, 경험하며, 노력하고 있습니다.',
   ],
-  sign: 'Tux',
+  sign: 'haeyong',
   // sign: packageJson.author.name,
   // latestUpdated: '2019-07-24',
   latestUpdated: lastestUpdatedAt,
