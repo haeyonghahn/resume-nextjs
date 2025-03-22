@@ -6,7 +6,6 @@ const project: IProject.Payload = {
     {
       title: 'ERP 재무 회계 솔루션 개발 및 운영',
       startedAt: '2020-08',
-      endedAt: '2025-03',
       where: '더존비즈온 ERP 솔루션 개발 및 운영',
       descriptions: [
         {
@@ -46,6 +45,10 @@ const project: IProject.Payload = {
           content: '주문 상세 조회 API를 PostgreSQL에서 MongoDB로 바꾼 이유',
           href:
             'https://github.com/FC-InnerCircle-ICD2/O2O-BE/wiki/%5BPR%5D-%EC%A3%BC%EB%AC%B8-%EC%83%81%EC%84%B8-%EC%A1%B0%ED%9A%8C-%EA%B0%9C%EC%84%A0',
+        },
+        {
+          content: 'Terraform 기반 AWS 인프라 자동화 구축',
+          href: 'https://github.com/FC-InnerCircle-ICD2/O2O-infra',
         },
       ],
     },

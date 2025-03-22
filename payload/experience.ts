@@ -10,7 +10,6 @@ const experience: IExperience.Payload = {
         {
           title: 'ERP / Software Developer',
           startedAt: '2020-08',
-          endedAt: '2025-03',
           descriptions: [
             '내부 그룹웨어 팀 및 외부 협력사와 협업하여 전자결재 시스템 개발',
             '재무 업무 비즈니스에 필요한 주요 API 구현 및 데이터 모델 설계',
