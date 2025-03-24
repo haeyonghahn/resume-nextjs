@@ -10,7 +10,7 @@ const project: IProject.Payload = {
       descriptions: [
         {
           content:
-            'SQL 구문에서 where id in (ID) 에 포함되는 ID의 개수가 100개 이상 초과하여 쿼리 속도 이슈 발생. ID 정보를 테이블에 저장하여 join문으로 쿼리 및 ExecutorService를 활용하여 응답 속도 개선',
+            'SQL 구문에서 where id in (ID) 에 포함되는 ID의 개수가 100개 이상 초과하여 쿼리 속도 이슈 발생. ID 정보를 테이블에 저장하여 join문으로 쿼리, ExecutorService를 활용하여 응답 속도 개선',
         },
         {
           content:
@@ -21,8 +21,7 @@ const project: IProject.Payload = {
             'ERP 시스템에서 데이터 적재 중복 코드 발생. 이를 개선하기 위해 커스텀 어노테이션을 작성하고 AOP를 적용하여 중복 코드 개선',
         },
         {
-          content:
-            '팩토리 메서드 패턴을 활용하여 결의서 증빙 자료 서비스 개발',
+          content: '팩토리 메서드 패턴을 활용하여 결의서 증빙 자료 서비스 개발',
         },
         {
           content:
@@ -31,7 +30,7 @@ const project: IProject.Payload = {
       ],
     },
     {
-      title: '온라인 음식 주문 서비스 개발',
+      title: 'B2C 배달앱 중개 서비스 개발',
       startedAt: '2024-12',
       endedAt: '2025-03',
       where: '패스트캠퍼스 INNER CIRCLE 2기 개발의 민족 팀 백엔드 개발',
@@ -51,11 +50,12 @@ const project: IProject.Payload = {
           href: 'https://github.com/FC-InnerCircle-ICD2/O2O-infra',
         },
         {
-          content: '시스템 운영 시 안정성 및 성능 분석을 고려한 모니터링 시스템 구축',
-          href: 'https://github.com/FC-InnerCircle-ICD2/O2O-BE/wiki/%5BBE%5D-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%95%B1-%EC%84%9C%EB%B9%84%EC%8A%A4-Grafana-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81',
+          content: '시스템 운영 시 안정성 및 성능 분석 고려를 위해 모니터링 시스템 구축',
+          href:
+            'https://github.com/FC-InnerCircle-ICD2/O2O-BE/wiki/%5BPR%5D-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0',
         },
         {
-          content: '온라인 음식 주문 서비스 개발 히스토리를 남기기 위한 문서 작성',
+          content: 'B2C 배달앱 중개 서비스 개발 히스토리를 남기기 위한 문서 작성',
           href: 'https://github.com/FC-InnerCircle-ICD2/O2O-BE/wiki',
         },
       ],
