@@ -9,33 +9,87 @@ const project: IProject.Payload = {
       where: '더존비즈온 ERP 솔루션 개발 및 운영',
       descriptions: [
         {
-          content: 'ERP 재무 회계 관련 유지보수 및 기능 개선',
+          content: 'SQL 쿼리 성능 최적화',
           weight: 'SEMI_BOLD',
           descriptions: [
             {
               content:
-                'SQL 구문에서 where id in (ID) 에 포함되는 ID의 개수가 100개 이상 초과하여 쿼리 속도 이슈 발생. ID 정보를 테이블에 저장하여 join문으로 쿼리, ExecutorService를 활용하여 응답 속도 개선',
+                '문제: 기존 쿼리는 WHERE id IN (ID) 조건에서 100개 이상의 ID를 포함할 경우 성능 저하 발생',
             },
             {
               content:
-                '레이스 컨디션으로 인한 결의서 중복 전표처리 오류 발생. Redis를 활용하여 동시성 처리 개선',
+                '개선 방법: ID 정보를 임시 테이블에 저장하고, JOIN을 활용하여 조회 방식 변경 → 불필요한 IN 연산 제거',
             },
-            {
-              content: '팩토리 메서드 패턴을 활용하여 결의서 증빙 자료 서비스 개발',
-            },
-          ]
+          ],
         },
         {
-          content: '그룹웨어 시스템 연동 API 개발 및 유지보수',
+          content: '동시성 문제 해결을 통한 전표 중복 처리 방지',
           weight: 'SEMI_BOLD',
           descriptions: [
             {
-              content: '전자결재 반려 후, 문서 재상신 과정에서 예산이 초과되어 입력된 오류 발생. 예산금액 입력 트랜잭션 로그 및 전자결재 히스토리 테이블을 조회하며 입력값 변경 이력을 추적. 비즈니스 로직 및 예산 검증 프로세스에서의 문제점을 확인하고 예외 처리 로직을 개선'
+              content: '문제: 레이스 컨디션으로 인해 동일한 결의서가 중복 전표 처리되는 오류 발생',
             },
             {
-              content: '그룹웨어에서 품의서 결재 문서가 종결 처리될 때, ERP 시스템과 연계하여 품의서 정보를 자동으로 저장하는 API를 개발'
-            }
-          ]
+              content:
+                '개선 방법: Redis를 활용한 분산 락을 적용하여 동일 결의서의 중복 처리 방지. 트랜잭션 처리 전 결의서 상태 확인 로직 추가',
+            },
+          ],
+        },
+        {
+          content: 'HTTP POST 요청 데이터 크기 제한 문제 해결',
+          weight: 'SEMI_BOLD',
+          descriptions: [
+            {
+              content:
+                '문제: HTTP POST 요청 시 WAS의 기본 파라미터 데이터 제한(2MB) 초과 오류 발생. Nginx 및 WAS의 설정 변경하는데 업무적으로 복잡한 부분이 있어서 요청 크기를 늘리는데 제한이 있음',
+            },
+            {
+              content:
+                '개선 방법 : 클라이언트에서 HTTP POST 요청 시, 데이터를 파일로 저장 → 저장된 파일 ID를 WAS에 전달 → API 로직에서 해당 파일을 읽어와 데이터 처리',
+            },
+          ],
+        },
+        {
+          content: '결의서 증빙 자료 서비스 개발 (팩토리 메서드 패턴 적용)',
+          weight: 'SEMI_BOLD',
+          descriptions: [
+            {
+              content:
+                '문제: 다양한 증빙 자료 유형(세금계산서, 카드 매출전표 등)에 따라 서비스 로직이 분기 처리되며 유지보수성이 낮음',
+            },
+            {
+              content:
+                '개선 방법: 팩토리 메서드 패턴을 적용하여 증빙 자료별 서비스 객체를 동적으로 생성. 인터페이스 기반 구조로 변경하여 신규 증빙 유형 추가 시 코드 수정 최소화',
+            },
+          ],
+        },
+        {
+          content: '전자결재 재상신 오류 및 예산 검증 프로세스 개선',
+          weight: 'SEMI_BOLD',
+          descriptions: [
+            {
+              content:
+                '문제: 그룹웨어에서 반려된 전자결재 문서를 재상신할 때, ERP 시스템과의 연동 과정에서 예산 초과 입력 오류 발생. 기존 시스템에서는 예산금액 변경 이력 및 전자결재 상태를 추적할 수 없어 원인 분석이 어려움',
+            },
+            {
+              content:
+                '개선 방법: 예산 트랜잭션 로그 및 전자결재 히스토리 테이블을 조회하여 변경 이력 추적 기능 추가. ERP-그룹웨어 간 예산 검증 프로세스에서 예외 처리 로직을 추가하여 입력 데이터 정합성 강화',
+            },
+          ],
+        },
+        {
+          content: '그룹웨어 결재 문서 자동 저장 API 개발',
+          weight: 'SEMI_BOLD',
+          descriptions: [
+            {
+              content:
+                '문제: 그룹웨어에서 품의서 결재 완료 후, ERP 시스템과의 연동이 수동으로 진행되며 사용자 입력 실수로 인해 데이터 누락 발생',
+            },
+            {
+              content:
+                '개선 방법: 그룹웨어 결재 완료 이벤트 발생 시, ERP 시스템으로 자동 저장 API 호출. ERP 시스템에서 해당 품의서를 자동 등록하고 결의서와 연계하는 기능 추가',
+            },
+          ],
         },
       ],
     },
@@ -56,7 +110,12 @@ const project: IProject.Payload = {
             'https://github.com/FC-InnerCircle-ICD2/O2O-BE/wiki/%5BPR%5D-%EC%A3%BC%EB%AC%B8-%EC%83%81%EC%84%B8-%EC%A1%B0%ED%9A%8C-%EA%B0%9C%EC%84%A0',
         },
         {
-          content: 'Terraform 기반 AWS 인프라 자동화 구축',
+          content: '배달앱 중개 서비스 비즈니스 로직 설계',
+          href:
+            'https://github.com/FC-InnerCircle-ICD2/O2O-BE/wiki/%5BBE%5D-%EC%8B%9C%ED%80%80%EC%8A%A4-%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8-Ver.2',
+        },
+        {
+          content: 'AWS 인프라 설계 및 Terraform 기반 AWS 인프라 자동화 구축',
           href: 'https://github.com/FC-InnerCircle-ICD2/O2O-infra',
         },
         {
