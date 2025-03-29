@@ -78,7 +78,7 @@ const project: IProject.Payload = {
           ],
         },
         {
-          content: '사용자가 입력한 거래에 사용된 전표 데이터 조회 시 오류 발생',
+          content: 'Java Heap Memory 증설이 어려운 고객사 환경에서 전표 데이터 조회 시 오류 발생',
           weight: 'SEMI_BOLD',
           descriptions: [
             {
@@ -87,7 +87,7 @@ const project: IProject.Payload = {
             },
             {
               content:
-                '개선 방법: Java Heap Memory 증설이 어려운 고객사 환경을 고려하며 HTTP API에서 WebSocket 기반 전송 방식으로 변경하여 롱 트랜잭션 문제 해결. 클라이언트가 처리할 수 있는 데이터 크기를 고려하여 MyBatis fetchSize 조절 및 resultHandler 활용하여 적절한 사이즈로 데이터 전송',
+                '개선 방법: HTTP API에서 WebSocket 기반 전송 방식으로 변경하여 롱 트랜잭션 문제 해결. 클라이언트가 처리할 수 있는 데이터 크기를 고려하여 MyBatis fetchSize 조절 및 resultHandler 활용하여 적절한 사이즈로 메모리 사용을 최소화하는 방식으로 개선',
             },
           ]
         },
