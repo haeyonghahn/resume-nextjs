@@ -89,7 +89,7 @@ const project: IProject.Payload = {
               content:
                 '개선 방법: HTTP API에서 WebSocket 기반 전송 방식으로 변경하여 롱 트랜잭션 문제 해결. 클라이언트가 처리할 수 있는 데이터 크기를 고려하여 MyBatis fetchSize 조절 및 resultHandler 활용하여 적절한 사이즈로 메모리 사용을 최소화하는 방식으로 개선',
             },
-          ]
+          ],
         },
         {
           content: '그룹웨어 결재 문서 자동 저장 API 개발',
