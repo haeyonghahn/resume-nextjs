@@ -14,7 +14,7 @@ const project: IProject.Payload = {
           descriptions: [
             {
               content:
-                '문제: 기존 쿼리는 WHERE id IN (ID) 조건에서 100개 이상의 ID를 포함할 경우 성능 저하 발생',
+                '문제: 기존 쿼리는 WHERE id IN (ID) 조건에서 100개 이상의 ID를 포함할 경우 슬로우 쿼리 발생',
             },
             {
               content:
@@ -23,11 +23,11 @@ const project: IProject.Payload = {
           ],
         },
         {
-          content: '동시성 문제 해결을 통한 전표 중복 처리 방지',
+          content: '동일한 결의서가 중복 전표 처리되는 오류 발생',
           weight: 'SEMI_BOLD',
           descriptions: [
             {
-              content: '문제: 레이스 컨디션으로 인해 동일한 결의서가 중복 전표 처리되는 오류 발생',
+              content: '문제: 레이스 컨디션으로 인해 동시성 문제 발생',
             },
             {
               content:
